@@ -9,8 +9,10 @@ class Package:
         # Vrať se k návrhu software pro zásilkovou společnost. U třídy Package uprav atribut state tak, aby byl chráněný. Ověř, že vytváření objektů i výpisy informací o něm fungují.
         self.address = address
         self._weight = weight
-        self.state = state
-
+        self._state = state
+    
+    def _mojeTajnaFunkce(self):
+        pass
     # Přidej metodu get_info(), která vrátí informace o balíku jako řetězec. Uvažuj například větu 
     # "Balík na adresu Václavské Náměstí 12, Praha má hmotnost 0.25 kg je ve stavu nedoručen".
         
@@ -71,4 +73,6 @@ print(package1._weight)
 # print(book1.delivery_price())
 # print(book2.delivery_price())
 # print(book3.delivery_price())
+
+
 

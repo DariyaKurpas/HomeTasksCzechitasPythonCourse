@@ -20,18 +20,18 @@ import statistics
 # velikonoce["symboly"].append("kuratko")
 # print(velikonoce["symboly"])
 
-school_report = {
-    "Český jazyk": 1,
-    "Anglický jazyk": 1,
-    "Matematika": 1,
-    "Přírodopis": 2,
-    "Dějepis": 1,
-    "Fyzika": 2,
-    "Hudební výchova": 4,
-    "Výtvarná výchova": 2,
-    "Tělesná výchova": 3,
-    "Chemie": 4,
-}
+# school_report = {
+#     "Český jazyk": 1,
+#     "Anglický jazyk": 1,
+#     "Matematika": 1,
+#     "Přírodopis": 2,
+#     "Dějepis": 1,
+#     "Fyzika": 2,
+#     "Hudební výchova": 4,
+#     "Výtvarná výchova": 2,
+#     "Tělesná výchova": 3,
+#     "Chemie": 4,
+# }
 
 # Napiš program, který spočte průměrnou známku ze všech předmětů.
 
@@ -53,5 +53,11 @@ school_report = {
 
 # print(subjectsWith1)
 
-allSubjectsWith1 = list(filter(lambda y: y == 1, school_report))
-print(allSubjectsWith1)
+# allSubjectsWith1 = list(filter(lambda y: y == 1, school_report))
+# print(allSubjectsWith1)
+
+
+myList = ["Darinka", "Filip", "Snouma", "Mexican", "Bob", "Kevin", "Timmy"]
+
+namesWithA = list(filter(lambda containsAO: "a" in containsAO.lower() and "o" in containsAO.lower(), myList))
+print(namesWithA)
