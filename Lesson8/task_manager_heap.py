@@ -1,0 +1,55 @@
+from datetime import datetime
+import heapq
+
+
+class Task:
+    def __init__(self):
+        self.all_tasks = {}
+        self.unused_ids = []
+        self.max_id = 0
+
+
+    def add_task(self):
+        new_task_name = input("What is the name of your new task?: \n")
+        if self.unused_ids:
+            task_id_add = heapq.heappop(self.unused_ids)
+        else:
+            self.max_id += 1
+            task_id_add = self.max_id
+        self.all_tasks[task_id_add] = f"{new_task_name}, timestamp: {datetime.now()}"
+        return "The task has been successfully added."
+
+    def remove_task(self):
+        remove_task_id = int(input("Which task ID would you like to remove? \n"))
+        if remove_task_id in self.all_tasks:
+            self.all_tasks.pop(remove_task_id)
+            heapq.heappush(self.unused_ids, remove_task_id)
+            return f"The task has been successfully removed."
+        else:
+            return f"The given task ID was not found."
+        
+
+    def show_tasks(self):
+        for task_id, task_name in self.all_tasks.items():
+            print(f"{task_id}: {task_name}")
+        
+
+def main():
+    task_manager = Task()
+    while True:
+        action_to_perform = input(
+            "Which action would you like to perform to your task manager? Please type add, remove or show. If you wish to stop modifying your task manager, please type EXIT. \n")
+        if action_to_perform.lower() == "add":
+            print(task_manager.add_task())
+        elif action_to_perform.lower() == "remove":
+            print(task_manager.remove_task())
+        elif action_to_perform.lower() == "show":
+            task_manager.show_tasks()
+        elif action_to_perform.lower() == "exit":
+            break
+        else:
+            print("I cannot perform this action. Please type in only add, remove or show.")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,7 @@
+#Here I will be mentioning all requirements for package versions etc, that other users need to have for my software to work for them.
+
+# for Windows:
+# pip install -r requiremens.txt
+
+# for macOS:
+# pip3 install -r requirements.txt
